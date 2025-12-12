@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   ClipboardList,
-  Users,
   School,
   Wallet,
   Settings,
@@ -22,7 +21,6 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Registrasi", href: "/dashboard/registrations", icon: ClipboardList },
-  { label: "Alumni", href: "/dashboard/alumni", icon: Users },
   { label: "SMA", href: "/dashboard/schools", icon: School },
   { label: "Keuangan", href: "/dashboard/finance", icon: Wallet },
 ];
