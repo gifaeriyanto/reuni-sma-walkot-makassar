@@ -11,7 +11,7 @@ interface SchoolLeaderboardProps {
 export function SchoolLeaderboard({ leaderboard }: SchoolLeaderboardProps) {
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
-      <div className="border-b border-gray-200 bg-white px-6 py-4">
+      <div className="border-b border-gray-200 bg-white px-4 py-4 sm:px-6">
         <h2 className="text-lg font-semibold text-gray-900">
           Leaderboard SMA
         </h2>
@@ -26,25 +26,25 @@ export function SchoolLeaderboard({ leaderboard }: SchoolLeaderboardProps) {
             <tr>
               <th
                 scope="col"
-                className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6"
               >
                 Rank
               </th>
               <th
                 scope="col"
-                className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6"
               >
                 Nama SMA
               </th>
               <th
                 scope="col"
-                className="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500"
+                className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6"
               >
                 Jumlah Alumni
               </th>
               <th
                 scope="col"
-                className="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500"
+                className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6"
               >
                 Persentase
               </th>
@@ -79,20 +79,20 @@ export function SchoolLeaderboard({ leaderboard }: SchoolLeaderboardProps) {
                   key={item.id}
                   className="transition-colors hover:bg-gray-50"
                 >
-                  <td className="whitespace-nowrap px-6 py-4 text-sm">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm sm:px-6">
                     <span className={`font-bold ${rankColor}`}>
                       {medal} #{rank}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                  <td className="px-4 py-4 text-sm font-medium text-gray-900 sm:px-6">
                     {item.schoolName}
                   </td>
-                  <td className="whitespace-nowrap px-6 py-4 text-right text-sm text-gray-900">
+                  <td className="whitespace-nowrap px-4 py-4 text-right text-sm text-gray-900 sm:px-6">
                     <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800">
                       {item.registeredCount.toLocaleString("id-ID")}
                     </span>
                   </td>
-                  <td className="whitespace-nowrap px-6 py-4 text-right text-sm text-gray-600">
+                  <td className="whitespace-nowrap px-4 py-4 text-right text-sm text-gray-600 sm:px-6">
                     <div className="flex items-center justify-end space-x-2">
                       <div className="h-2 w-20 overflow-hidden rounded-full bg-gray-200">
                         <div

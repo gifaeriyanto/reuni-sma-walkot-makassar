@@ -1,16 +1,28 @@
 "use client";
 
-import { Bell } from "lucide-react";
+import { Bell, Menu } from "lucide-react";
 
 interface HeaderProps {
   title: string;
   subtitle?: string;
+  onMenuClick: () => void;
 }
 
-export function Header({ title, subtitle }: HeaderProps) {
+export function Header({ title, subtitle, onMenuClick }: HeaderProps) {
   return (
     <header className="sticky top-0 z-30 border-b border-gray-200 bg-white">
-      <div className="flex h-[63px] items-center justify-end px-8">
+      <div className="flex h-[63px] items-center justify-between px-4 sm:px-8">
+        {/* Mobile Menu Button */}
+        <button
+          onClick={onMenuClick}
+          className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 lg:hidden"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
+
+        {/* Spacer for desktop */}
+        <div className="hidden lg:block"></div>
+
         {/* Right Section */}
         <div className="flex items-center space-x-4">
           <button className="relative rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100">

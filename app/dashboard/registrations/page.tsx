@@ -75,7 +75,7 @@ export default function RegistrationsPage() {
   );
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6 p-4 sm:p-6">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-6">
@@ -140,22 +140,22 @@ export default function RegistrationsPage() {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6">
                     Nama
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6">
                     Email
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6">
                     Telepon
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6">
                     SMA
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6">
                     Tanggal Daftar
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 sm:px-6">
                     Status
                   </th>
                 </tr>
@@ -167,27 +167,27 @@ export default function RegistrationsPage() {
                       key={registration.id}
                       className="transition-colors hover:bg-gray-50"
                     >
-                      <td className="whitespace-nowrap px-6 py-4">
+                      <td className="whitespace-nowrap px-4 py-4 sm:px-6">
                         <div className="text-sm font-medium text-gray-900">
                           {registration.name}
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-6 py-4">
+                      <td className="whitespace-nowrap px-4 py-4 sm:px-6">
                         <div className="text-sm text-gray-600">
                           {registration.email}
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-6 py-4">
+                      <td className="whitespace-nowrap px-4 py-4 sm:px-6">
                         <div className="text-sm text-gray-600">
                           {registration.phone}
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-6 py-4">
+                      <td className="whitespace-nowrap px-4 py-4 sm:px-6">
                         <div className="text-sm text-gray-600">
                           {registration.schoolName}
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-6 py-4">
+                      <td className="whitespace-nowrap px-4 py-4 sm:px-6">
                         <div className="text-sm text-gray-600">
                           {new Date(registration.registeredAt).toLocaleDateString(
                             "id-ID",
@@ -199,7 +199,7 @@ export default function RegistrationsPage() {
                           )}
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-6 py-4">
+                      <td className="whitespace-nowrap px-4 py-4 sm:px-6">
                         <span
                           className={`inline-flex rounded-full px-2 py-1 text-xs font-semibold ${
                             registration.status === "confirmed"
@@ -218,7 +218,7 @@ export default function RegistrationsPage() {
                   <tr>
                     <td
                       colSpan={6}
-                      className="px-6 py-12 text-center text-sm text-gray-500"
+                      className="px-4 py-12 text-center text-sm text-gray-500 sm:px-6"
                     >
                       Tidak ada data registrasi yang ditemukan
                     </td>
