@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Search, Plus, School as SchoolIcon } from "lucide-react";
 
 interface School {
@@ -72,6 +73,7 @@ const mockSchools: School[] = [
 ];
 
 export default function SchoolsPage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [schools] = useState<School[]>(mockSchools);
 
@@ -113,7 +115,10 @@ export default function SchoolsPage() {
 
           {/* Actions */}
           <div className="flex gap-3">
-            <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
+            <button
+              onClick={() => router.push("/dashboard/schools/add")}
+              className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            >
               <Plus className="h-4 w-4" />
               Tambah SMA
             </button>
