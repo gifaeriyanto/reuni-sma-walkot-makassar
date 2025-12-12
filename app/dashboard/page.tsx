@@ -1,6 +1,5 @@
 import { StatsCards } from "./components/stats-cards";
 import { SchoolLeaderboard } from "./components/school-leaderboard";
-import { FinanceReport } from "./components/finance-report";
 
 // Mock data - replace with actual API calls
 async function getDashboardData() {
@@ -37,25 +36,24 @@ async function getDashboardData() {
 export default async function DashboardPage() {
   const data = await getDashboardData();
 
+  // Calculate total expenses and saldo
+  const totalExpenses = data.expenses.reduce((sum, expense) => sum + expense.amount, 0);
+  const totalSaldo = data.totalRevenue - totalExpenses;
+
   return (
     <div className="space-y-6 p-6">
-      {/* Stats Cards */}
-      <StatsCards
-        totalRegistered={data.totalRegistered}
-        totalSchools={data.totalSchools}
-        totalRevenue={data.totalRevenue}
-      />
-
-      {/* Main Content Grid */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        {/* Leaderboard */}
-        <SchoolLeaderboard leaderboard={data.leaderboard} />
-
-        {/* Finance Report */}
-        <FinanceReport
-          totalRevenue={data.totalRevenue}
-          expenses={data.expenses}
+      <div className="mx-auto max-w-7xl">
+        {/* Stats Cards */}
+        <StatsCards
+          totalRegistered={data.totalRegistered}
+          totalSchools={data.totalSchools}
+          totalSaldo={totalSaldo}
         />
+
+        {/* Main Content */}
+        <div className="mt-6">
+          <SchoolLeaderboard leaderboard={data.leaderboard} />
+        </div>
       </div>
     </div>
   );
